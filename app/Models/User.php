@@ -116,6 +116,18 @@ class User extends Authenticatable
     {
         $this->orders = $orders;
     }
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+    public function getItems()
+    {
+        return $this->items;
+    }
+    public function setItems($items)
+    {
+        $this->items = $items;
+    }
 
     /**
      * The attributes that should be hidden for serialization.
